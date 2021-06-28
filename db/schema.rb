@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_140631) do
+ActiveRecord::Schema.define(version: 2021_06_27_162736) do
+
+  create_table "kirokus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "hydration", null: false
+    t.string "Meal", null: false
+    t.string "excretion", null: false
+    t.string "bathe"
+    t.string "vital", null: false
+    t.string "Nightdiary", null: false
+    t.string "accident"
+    t.text "diary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_kirokus_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +35,10 @@ ActiveRecord::Schema.define(version: 2021_06_27_140631) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kirokus", "users"
 end
