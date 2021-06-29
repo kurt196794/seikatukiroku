@@ -5,6 +5,5 @@ class KirokusController < ApplicationController
     @kirokus = Kiroku.all
   end
 
-
   
 end
