@@ -31,7 +31,11 @@
       様
       <%end%>
       </td>
-			<td>朝|昼|夕</td>
+			<td>
+      <%#= f.collection_select(:meal_id, Meal.all, :id, :user_id, {}, {class:"genre-select"}) %>
+      昼|a<br>
+      夕|<br>
+      </td>
 			<td>朝|昼|夕</td>
 			<td>朝|昼|夕</td>
 			<td>朝|昼|夕</td>

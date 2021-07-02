@@ -4,7 +4,7 @@ class CreateKirokus < ActiveRecord::Migration[6.0]
       
       t.references :user,       foreign_key: true
       t.string :hydration,      null: false
-      t.string :Meal,           null: false
+      t.integer :Meal,           null: false
       t.string :excretion,      null: false
       t.string :bathe          
       t.string :vital,           null: false
