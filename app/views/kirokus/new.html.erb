@@ -1,0 +1,56 @@
+<%= render partial: 'kaitekikun'%>
+
+<div class="container">
+    <h1>登録する</h1>
+    <%= form_with(model: @kiroku, local: true) do |f| %>
+     <h2> お名前：
+     <%= f.text_field :name, placeholder: "入居者様氏名を記入" %>様
+     </h2>
+
+      食事朝
+      <%= f.collection_select(:mealasa_id, Mealasa.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %>
+      食事昼
+      <%= f.collection_select(:mealhiru_id, Mealhiru.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %>
+      食事夕
+      <%= f.collection_select(:mealhiru_id, Mealhiru.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %><br>
+      
+      水分朝
+      <%= f.text_field :hydrationasa, placeholder: "水分" %>
+      水分昼
+      <%= f.text_field :hydrationhiru, placeholder: "水分" %>
+      水分夕
+      <%= f.text_field :hydrationyuu, placeholder: "水分" %>
+      <br>
+      排泄朝
+      <%= f.collection_select(:excretionasa_id, Excretionasa.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %>  
+      排泄昼
+      <%= f.collection_select(:excretionhiru_id, Excretionhiru.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %> 
+      排泄夕
+      <%= f.collection_select(:excretionyuu_id, Excretionyuu.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %> 
+      <br>
+      体温朝
+      <%= f.text_field :vitalasa, placeholder: "体温" %>
+      体温昼
+      <%= f.text_field :vitalhiru, placeholder: "体温" %>
+      体温夕
+      <%= f.text_field :vitalyuu, placeholder: "体温" %>
+      <br>
+
+      入浴<br>
+      <%= f.collection_select(:bathe_id, Bathe.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %> 
+      <br>
+      夜間<br>
+      <%= f.collection_select(:nightrecord_id, Nightrecord.all, :id, :name, {}, {class:"genre-select", id:"item-prefecture"}) %> 
+      <br>
+      日常<br>
+      <%= f.text_area :diary, placeholder: "血圧、脈。日常生活面での身体面、精神面の変化、または面会、カンファレンス、日中の活動内容、イベントがあれば記載" %><br>
+      夜間記録<br>
+      <%= f.text_area :nightdiary, placeholder: "夜間時の排泄、水分、体交があれば記載" %><br>
+      アクシデント<br>
+      <%= f.text_area :accident, placeholder: "アクシデント発生時記入。必ず申し送りにも「アクシデント（）件」と記入すること」" %><br>
+      申し送り<br>
+      <%= f.text_area :message, placeholder: "全体へ申し送りを送信する" %><br>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
