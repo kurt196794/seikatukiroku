@@ -4,11 +4,12 @@ class KirokusController < ApplicationController
 
   def index
     @kirokus = Kiroku.all
-    #@kiroku = Kiroku.find(params[:id])
+    #@kiroku = Kiroku.order("created_at DESC")
   end
 
   def new
     @kiroku = Kiroku.new
+    
   end
 
   def create
@@ -28,8 +29,8 @@ class KirokusController < ApplicationController
     :bathe_id,:nightrecord_id,:diary,:nightdiary,:accident,:message).merge(user_id: current_user.id)
   end
 
-  #def set_kiroku
-  #  @kiroku = Kiroku.find(params[:id])
-  #end
+  def set_kiroku
+    @kiroku = Kiroku.find(params[:id])
+  end
   
 end

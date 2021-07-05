@@ -2,14 +2,14 @@ class Kiroku < ApplicationRecord
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :Mealasa
-  belongs_to :Mealhiru
-  belongs_to :Mealyuu
-  belongs_to :Excretionasa
+  belongs_to :mealasa
+  belongs_to :mealhiru
+  belongs_to :mealyuu
+  belongs_to :excretionasa
   belongs_to :excretionhiru
-  belongs_to :Excretionyuu
-  belongs_to :Bathe
-  belongs_to :Nightrecord
+  belongs_to :excretionyuu
+  belongs_to :bathe
+  belongs_to :nightrecord
 
   #validates :name 
  

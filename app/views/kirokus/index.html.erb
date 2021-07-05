@@ -11,7 +11,7 @@
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
     <%end%>
 </div>
-<%= form_with model: @kiroku,local: true do |f| %>
+
 <table>
 	<tbody>
 		<tr>
@@ -26,161 +26,43 @@
 			<td>アクシデント</td>
 		</tr>
 		<tr>
-    <% @kirokus.each do |k| %>
-			<td> <% if user_signed_in? %>
-      <%= k.name%>   様<br>
+    <% @kirokus.each do |f| %>
+    <%#if @kirokus.first.nil?%>
+     <%#= "未記入です"%>
+			<td> 
+      <%= f.name %>   様<br>
+      <% if user_signed_in? %>
       <%= link_to "登録/編集", new_kiroku_path, class: "nyuukyosya_name" %>
       <%end%>
       </td>
 			<td>
-      朝|<br>
-      昼|a<br>
+      朝|<%= f.mealasa.name%><br>
+      昼|<%= f.mealhiru.name%><br>
       夕|<br>
       </td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日|○|拒否</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-    	<td> <% if user_signed_in? %>
-       様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-    <td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-     <td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td> <% if user_signed_in? %>
-      <%= k.name %>   様<br>
-      <%= link_to "登録/編集", root_path, class: "nyuukyosya_name" %>
-      様
-      <%end%>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>朝|昼|夕</td>
-			<td>曜日</td>
-			<td>良眠</td>
-			<td></td>
-			<td></td>
-	  </tr>
-	  </tbody>
-   </table>
-  <%end%>
- <%end%>
+			<td>
+      朝|<%= f.hydrationasa%><br>
+      昼|<%= f.hydrationhiru%><br>
+      夕|<%= f.hydrationyuu%><br>
+      </td>
+			<td>
+      朝|<%= f.excretionasa.name%><br>
+      昼|<%= f.excretionhiru.name%><br>
+      夕|<%= f.excretionyuu.name%>
+      </td>
+			<td>
+      朝|<%= f.vitalasa%><br>
+      昼|<%= f.vitalhiru%><br>
+      夕|<%= f.vitalyuu%>
+      </td>
+			<td><%=f.bathe.name%>
+      </td>
+			<td><%=f.nightrecord.name%>
+      </td>
+			<td><%=f.diary%>
+      </td>
+			<td><%=f.nightdiary%>
+      </td>
+		</tr><%f.accident%>
+    <%end%>
+	
