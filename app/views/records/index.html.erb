@@ -4,8 +4,10 @@
     <% if user_signed_in? %>
       <%= link_to current_user.name, class: "user-nickname"  %>
   さん。
-    <%= link_to '申し送りを確認しましょう。', root_path, method: :delete, class: "index_mousiokuri" %>
-   <p><%= link_to '  ログアウト/保存', destroy_user_session_path, method: :delete, class: "logout" %></p>
+   <%#= link_to '申し送り', kiroku_path(@kiroku.id), method: :get %>
+    <%#= link_to '申し送りを確認しましょう。', kiroku_path(kiroku.id) %><br>
+    <%= link_to '入居者登録', new_record_path, class: "index_mousiokuri" %><br>
+   <p><%= link_to '  ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></p>
       <% else %>
             <%= link_to "ログイン", user_session_path, class: "post" %>
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
@@ -15,6 +17,7 @@
 <table>
 	<tbody>
 		<tr>
+    
 			<td>　入居者様</td>
 			<td>　　食事</td>
 			<td>　　水分</td>
@@ -26,13 +29,12 @@
 			<td>アクシデント</td>
 		</tr>
 		<tr>
-    <% @kirokus.each do |f| %>
-    <%#if @kirokus.first.nil?%>
-     <%#= "未記入です"%>
+    <% @records.each do |f| %>
 			<td> 
-      <%= f.name %>   様<br>
+      <%= f.room %>号室<br>
+      <h3><%= f.name %>   様</h3>
       <% if user_signed_in? %>
-      <%= link_to "登録/編集", new_kiroku_path, class: "nyuukyosya_name" %>
+      <%= link_to "編集", new_record_path, class: "nyuukyosya_name" %>
       <%end%>
       </td>
 			<td>

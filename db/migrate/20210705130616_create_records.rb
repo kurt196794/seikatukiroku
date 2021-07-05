@@ -1,9 +1,10 @@
-class CreateKirokus < ActiveRecord::Migration[6.0]
+class CreateRecords < ActiveRecord::Migration[6.0]
   def change
-    create_table :kirokus do |t|
-      
+    create_table :records do |t|
+
       t.references :user,       foreign_key: true
       t.string :name,           null: false
+      t.string :room,           null: false
       t.integer :mealasa_id
       t.integer :mealhiru_id
       t.integer :mealyuu_id
@@ -22,7 +23,7 @@ class CreateKirokus < ActiveRecord::Migration[6.0]
       t.text :nightdiary
       t.text :accident
       t.text :message
-
+      
       t.timestamps
     end
   end

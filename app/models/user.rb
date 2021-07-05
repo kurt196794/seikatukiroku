@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
          validates :name, presence: true
          
-         has_many :kirokus
+         has_many :records
 end

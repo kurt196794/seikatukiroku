@@ -16,6 +16,6 @@ class Mealhiru < ActiveHash::Base
   ]
  
    include ActiveHash::Associations
-   has_many :Kiroku
- 
+   has_many :Record
+
   end

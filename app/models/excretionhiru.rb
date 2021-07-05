@@ -9,6 +9,6 @@ class Excretionhiru < ActiveHash::Base
     { id: 6, name: '未確認' },
   ]
    include ActiveHash::Associations
-   has_many :Kiroku
+   has_many :Record
  
   end

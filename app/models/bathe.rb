@@ -7,6 +7,6 @@ class Bathe < ActiveHash::Base
     { id: 4, name: '不調の為中止' },
   ]
    include ActiveHash::Associations
-   has_many :Kiroku
+   has_many :Record
  
   end

@@ -2,9 +2,12 @@
 
 <div class="container">
     <h1>登録する</h1>
-    <%= form_with(model: @kiroku, local: true) do |f| %>
+    <%= form_with(model: @record, local: true) do |f| %>
      <h2> お名前：
      <%= f.text_field :name, placeholder: "入居者様氏名を記入" %>様
+     </h2>
+     <h2>居室番号:
+     <%= f.text_field :room, placeholder: "居室番号を入力" %>号室
      </h2>
 
       食事朝
