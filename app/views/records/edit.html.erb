@@ -1,7 +1,7 @@
 <%= render partial: 'kaitekikun'%>
 
 <div class="container">
-    <h1>登録する</h1>
+    <h1>編集する</h1>
     <%= form_with(model: @record, local: true) do |record| %>
      <h2> お名前：
      <%= record.text_field :name, placeholder: "入居者様氏名を記入" %>様
@@ -57,3 +57,4 @@
     <% end %>
   </div>
 </div>
+ <p> <%= link_to '退所済みの場合はこちらを押してください', record_path(@record), method: :delete %></p>

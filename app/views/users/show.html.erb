@@ -1,0 +1,16 @@
+<%#= render partial: 'kaitekikun'%>
+  <%= current_user.name %>申し送り一覧
+  <% @records.each do |record| %>
+  <table>
+	  <tbody>
+	  	<tr>
+
+      <p><%=record.name%>さん・・・<%= record.message%></p>
+       <%#= link_to "確認、完了後は削除してください", edit_record_path(record.id), method: :delete, , class: "hoge" %>
+    </tr>
+   <tr>
+  </tr>
+
+  <% end %>
+
+ <%= link_to '戻る', root_path%>

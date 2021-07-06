@@ -1,23 +1,27 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
- # before_action :set_kiroku, except: [:new, :create,]
+  before_action :set_records, except: [:new, :create,:index]
 
   def index
     @records = Record.all
-  
   end
 
   def new
     @record = Record.new
   end
 
-  #def show
-    #@records = Record.all
-  #3@record = Record.find(params[:id])
-  #end
+  def show
+  end
 
-  #def edit
-  #end
+  def edit
+  end
+
+
+  def update
+    @record.update(record_params)
+    redirect_to root_path
+  end
+
 
   def create
     @record = Record.new(record_params)
@@ -29,7 +33,8 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    @record.destroy
+   @record.destroy
+   redirect_to root_path
    end
 
   private
@@ -40,7 +45,7 @@ class RecordsController < ApplicationController
     :bathe_id,:nightrecord_id,:diary,:nightdiary,:accident,:message).merge(user_id: current_user.id)
   end
 
- #def set_kiroku
-  #@kiroku = Kiroku.find(params[:id])
-  #end
+ def set_records
+  @record = Record.find(params[:id])
+ end
 end

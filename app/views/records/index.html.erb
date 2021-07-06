@@ -4,8 +4,7 @@
     <% if user_signed_in? %>
       <%= link_to current_user.name, class: "user-nickname"  %>
   さん。
-   <%#= link_to '申し送り', kiroku_path(@kiroku.id), method: :get %>
-    <%#= link_to '申し送りを確認しましょう。', kiroku_path(kiroku.id) %><br>
+    <%= link_to "申し送りを確認しましょう", "/users/#{current_user.id}" %><br>
     <%= link_to '入居者登録', new_record_path, class: "index_mousiokuri" %><br>
    <p><%= link_to '  ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></p>
       <% else %>
@@ -29,42 +28,42 @@
 			<td>アクシデント</td>
 		</tr>
 		<tr>
-    <% @records.each do |f| %>
+    <% @records.each do |record| %>
 			<td> 
-      <%= f.room %>号室<br>
-      <h3><%= f.name %>   様</h3>
+      <%= record.room %>号室<br>
+      <h3><%= record.name %>   様</h3>
       <% if user_signed_in? %>
-      <%= link_to "編集", new_record_path, class: "nyuukyosya_name" %>
+      <%= link_to "編集", edit_record_path(record.id), method: :get, class: "hoge" %>
       <%end%>
       </td>
 			<td>
-      朝|<%= f.mealasa.name%><br>
-      昼|<%= f.mealhiru.name%><br>
-      夕|<br>
+      朝|<%= record.mealasa.name%><br>
+      昼|<%= record.mealhiru.name%><br>
+      夕|<%= record.mealyuu.name%><br>
       </td>
 			<td>
-      朝|<%= f.hydrationasa%><br>
-      昼|<%= f.hydrationhiru%><br>
-      夕|<%= f.hydrationyuu%><br>
+      朝|<%= record.hydrationasa%><br>
+      昼|<%= record.hydrationhiru%><br>
+      夕|<%= record.hydrationyuu%><br>
       </td>
 			<td>
-      朝|<%= f.excretionasa.name%><br>
-      昼|<%= f.excretionhiru.name%><br>
-      夕|<%= f.excretionyuu.name%>
+      朝|<%= record.excretionasa.name%><br>
+      昼|<%= record.excretionhiru.name%><br>
+      夕|<%= record.excretionyuu.name%>
       </td>
 			<td>
-      朝|<%= f.vitalasa%><br>
-      昼|<%= f.vitalhiru%><br>
-      夕|<%= f.vitalyuu%>
+      朝|<%= record.vitalasa%><br>
+      昼|<%= record.vitalhiru%><br>
+      夕|<%= record.vitalyuu%>
       </td>
-			<td><%=f.bathe.name%>
+			<td><%=record.bathe.name%>
       </td>
-			<td><%=f.nightrecord.name%>
+			<td><%=record.nightrecord.name%>
       </td>
-			<td><%=f.diary%>
+			<td><%=record.diary%>
       </td>
-			<td><%=f.nightdiary%>
+			<td><%=record.nightdiary%>
       </td>
-		</tr><%f.accident%>
+		</tr><%record.accident%>
     <%end%>
 	

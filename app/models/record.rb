@@ -11,7 +11,7 @@ class Record < ApplicationRecord
     belongs_to :bathe
     belongs_to :nightrecord
   
-    #validates :name 
+
    
   
 end
