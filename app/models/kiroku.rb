@@ -1,3 +1,0 @@
-class Kiroku < ApplicationRecord
-  
-end
