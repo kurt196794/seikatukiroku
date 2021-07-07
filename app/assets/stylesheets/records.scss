@@ -1,6 +1,46 @@
 // Place all the styles related to the records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.meintaitle {
+text-align: center;
+font-size: 50px;
+font-weight: bold;
+}
+
+.logout{
+	text-align: right;
+	margin: 10px 0 25px;
+}
+
+.logout_button{
+	font-size: 16px;
+}
+
+.greeting{
+	margin-bottom: 20px;
+}
+
+.touroku{
+	margin: 20px 0;
+	width: 13%;
+	
+}
+
+.touroku:hover{
+	opacity: 0.6;
+}
+
+.index_mousiokuri{
+	color: #000;
+	text-decoration: none;
+	background: #eee;
+	padding: 15px;
+	display: block;
+	text-align: center;
+	border-radius: 5px;
+
+}
+
 table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;

@@ -1,12 +1,21 @@
 <%= render partial: 'kaitekikun'%>
+
+ <% if user_signed_in? %>
+
+  <div class="logout">
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
+</div>
+ <%end%>
+
 <div class="greeting">
-  こんにちは 
-    <% if user_signed_in? %>
+こんにちは 
+ <% if user_signed_in? %>
       <%= link_to current_user.name, class: "user-nickname"  %>
   さん。
-    <%= link_to "申し送りを確認しましょう", "/users/#{current_user.id}" %><br>
-    <%= link_to '入居者登録', new_record_path, class: "index_mousiokuri" %><br>
-   <p><%= link_to '  ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></p>
+    <%= link_to "申し送りを確認しましょう", "/users/#{current_user.id}" %>
+  <div class="touroku">
+    <%= link_to '入居者登録', new_record_path, class: "index_mousiokuri" %>
+  </div>
       <% else %>
             <%= link_to "ログイン", user_session_path, class: "post" %>
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
