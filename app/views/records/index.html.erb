@@ -24,25 +24,24 @@
 
 <table>
 	<tbody>
-		<tr>
-    
-			<td>　入居者様</td>
-			<td>　　食事</td>
-			<td>　　水分</td>
-			<td>　　排泄</td>
-			<td>　　体温</td>
-			<td>　　入浴</td>
-			<td>　　夜間</td>
-			<td>　　日常</td>
+		<tr class="input_item">
+			<td>入居者様</td>
+			<td>食事</td>
+			<td>水分</td>
+			<td>排泄</td>
+			<td>体温</td>
+			<td>入浴</td>
+			<td>夜間</td>
+			<td>日常</td>
 			<td>アクシデント</td>
 		</tr>
 		<tr>
     <% @records.each do |record| %>
 			<td> 
-      <%= record.room %>号室<br>
-      <h3><%= record.name %>   様</h3>
+      <span class="roomNo"><%= record.room %>号室</span>
+      <span class="name"><%= record.name %>   様</span>
       <% if user_signed_in? %>
-      <%= link_to "編集", edit_record_path(record.id), method: :get, class: "hoge" %>
+      <%= link_to "編集", edit_record_path(record.id), method: :get, class: "edit" %>
       <%end%>
       </td>
 			<td>
@@ -65,9 +64,9 @@
       昼|<%= record.vitalhiru%><br>
       夕|<%= record.vitalyuu%>
       </td>
-			<td><%=record.bathe.name%>
+			<td class="center"><%=record.bathe.name%>
       </td>
-			<td><%=record.nightrecord.name%>
+			<td class="center"><%=record.nightrecord.name%>
       </td>
 			<td><%=record.diary%>
       </td>

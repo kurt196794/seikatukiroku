@@ -1,6 +1,11 @@
 // Place all the styles related to the records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	padding: 0 20px;
+}
+
 .meintaitle {
 text-align: center;
 font-size: 50px;
@@ -21,8 +26,8 @@ font-weight: bold;
 }
 
 .touroku{
-	margin: 20px 0;
-	width: 13%;
+	margin: 20px 0 0 17px;
+	width: 9%;
 	
 }
 
@@ -33,7 +38,7 @@ font-weight: bold;
 .index_mousiokuri{
 	color: #000;
 	text-decoration: none;
-	background: #eee;
+	background: #d0d0d0;
 	padding: 15px;
 	display: block;
 	text-align: center;
@@ -45,9 +50,19 @@ table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;
 }
+
+.input_item{
+	background: #eee;
+}
+
+.input_item td{
+	font-weight: bold;
+	text-align: center;
+}
+
 td, th {
 	padding: 6px;
-	width: 100px;
+	width: 10%;
 	height: 60px;
 }
 th {
@@ -62,4 +77,26 @@ th {
 
 .nyuukyosya_name {
   font-size: x-small;
+}
+
+.roomNo{
+	font-size: 13px;
+	display: block;
+}
+
+.name{
+	font-size: 17px;
+	font-weight: bold;
+	display: block;
+	margin-top: 5px;
+}
+
+.edit{
+	font-size: 15px;
+	text-align: right;
+	display: block;
+}
+
+.center{
+	text-align: center;
 }
