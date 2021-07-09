@@ -6,6 +6,11 @@ body{
 	padding: 0 20px;
 }
 
+.inner {
+	padding: 20px;
+	background: #eee;
+}
+
 .meintaitle {
 text-align: center;
 font-size: 50px;
@@ -99,4 +104,58 @@ th {
 
 .center{
 	text-align: center;
+}
+
+.input {
+	display: flex;
+	margin-top: 5px;
+}
+
+.meal {
+	margin-top: 40px;
+}
+
+.meal, .moisture, .emission, .body_temperature, .bathing, .night, .everyday, .night_record, .accident, .takeOver {
+	margin-bottom: 15px;
+}
+
+.inputItem{
+	font-weight: bold;
+}
+
+.text_area{
+	width: 30%;
+}
+
+.maintitle{
+	margin-bottom: 5px;
+}
+
+.meal .f-item, .moisture .f-item, .emission .f-item, .body_temperature .f-item {
+	width: 13%;
+}
+
+.diary{
+	width: 30%;
+}
+
+.roomNom{
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
+}
+
+.hydration-select,.vital-select{
+	width: 73%;
+}
+
+.meal-select, .excretion-select{
+	width: 77%;
+}
+
+.bathe-select,.nightrecord-select{
+	width: 11%;
+}
+
+.diary,.nightdiary,.message,.accidentarea{
+	width: 35%;
 }
