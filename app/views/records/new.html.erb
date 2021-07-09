@@ -3,6 +3,9 @@
 <div class="container">
     <h1 class="maintitle">登録する</h1>
     <%= form_with(model: @record, local: true) do |record| %>
+
+
+
   <div class="inner">
      <h2> お名前：
      <%= record.text_field :name, placeholder: "入居者様氏名を記入" %>様
