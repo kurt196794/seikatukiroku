@@ -1,13 +1,73 @@
 // Place all the styles related to the records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	padding: 0 20px;
+}
+
+.inner {
+	padding: 20px;
+	background: #eee;
+}
+
+.meintaitle {
+text-align: center;
+font-size: 50px;
+font-weight: bold;
+}
+
+.logout{
+	text-align: right;
+	margin: 10px 0 25px;
+}
+
+.logout_button{
+	font-size: 16px;
+}
+
+.greeting{
+	margin-bottom: 20px;
+}
+
+.touroku{
+	margin: 20px 0 0 17px;
+	width: 9%;
+	
+}
+
+.touroku:hover{
+	opacity: 0.6;
+}
+
+.index_mousiokuri{
+	color: #000;
+	text-decoration: none;
+	background: #d0d0d0;
+	padding: 15px;
+	display: block;
+	text-align: center;
+	border-radius: 5px;
+
+}
+
 table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;
 }
+
+.input_item{
+	background: #eee;
+}
+
+.input_item td{
+	font-weight: bold;
+	text-align: center;
+}
+
 td, th {
 	padding: 6px;
-	width: 100px;
+	width: 10%;
 	height: 60px;
 }
 th {
@@ -22,4 +82,90 @@ th {
 
 .nyuukyosya_name {
   font-size: x-small;
+}
+
+.roomNo{
+	font-size: 13px;
+	display: block;
+}
+
+.name{
+	font-size: 19px;
+	font-weight: bold;
+	display: block;
+	margin-top: 5px;
+}
+
+.edit{
+	font-size: 15px;
+	text-align: right;
+	display: block;
+}
+
+.center{
+	text-align: center;
+}
+
+.input {
+	display: flex;
+	margin-top: 5px;
+}
+
+.meal {
+	margin-top: 40px;
+}
+
+.meal, .moisture, .emission, .body_temperature, .bathing, .night, .everyday, .night_record, .accident, .takeOver {
+	margin-bottom: 15px;
+}
+
+.inputItem{
+	font-weight: bold;
+}
+
+.text_area{
+	width: 30%;
+}
+
+.maintitle{
+	margin-bottom: 5px;
+}
+
+.meal .f-item, .moisture .f-item, .emission .f-item, .body_temperature .f-item {
+	width: 13%;
+}
+
+.diary{
+	width: 30%;
+}
+
+.roomNom{
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
+}
+
+.hydration-select,.vital-select{
+	width: 73%;
+}
+
+.meal-select, .excretion-select{
+	width: 77%;
+}
+
+.bathe-select,.nightrecord-select{
+	width: 11%;
+}
+
+.diary,.nightdiary,.message,.accidentarea{
+	width: 35%;
+}
+
+.small{
+	font-size: 14px;
+	margin-right: 10px;
+	display: inline-block;
+
+}
+
+.big{
 }

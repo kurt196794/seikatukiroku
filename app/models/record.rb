@@ -11,7 +11,10 @@ class Record < ApplicationRecord
     belongs_to :bathe
     belongs_to :nightrecord
   
-
+    with_options presence: true do
+      validates :name 
+      validates :room
+    end
    
   
 end
