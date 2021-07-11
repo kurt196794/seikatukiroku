@@ -37,41 +37,42 @@
 		</tr>
 		<tr>
     <% @records.each do |record| %>
+
 			<td> 
       <span class="roomNo"><%= record.room %>号室</span>
-      <span class="name"><%= record.name %>   様</span>
+      <span class="name"><%= record.name %>様</span>
       <% if user_signed_in? %>
       <%= link_to "編集", edit_record_path(record.id), method: :get, class: "edit" %>
       <%end%>
       </td>
 			<td>
-      朝|<%= record.mealasa.name%><br>
-      昼|<%= record.mealhiru.name%><br>
-      夕|<%= record.mealyuu.name%><br>
+      <span class="small">朝</span><span class ="big"><%= record.mealasa.name%></span><br>
+      <span class="small">昼</span><span class ="big"><%= record.mealhiru.name%></span><br>
+      <span class="small">夕</span><span class ="big"><%= record.mealyuu.name%></span><br>
       </td>
 			<td>
-      朝|<%= record.hydrationasa%><br>
-      昼|<%= record.hydrationhiru%><br>
-      夕|<%= record.hydrationyuu%><br>
+      <span class="small">朝</span><span class ="big"><%= record.hydrationasa%></span><br>
+      <span class="small">昼</span><span class ="big"><%= record.hydrationhiru%></span><br>
+      <span class="small">夕</span><span class ="big"><%= record.hydrationyuu%></span><br>
       </td>
 			<td>
-      朝|<%= record.excretionasa.name%><br>
-      昼|<%= record.excretionhiru.name%><br>
-      夕|<%= record.excretionyuu.name%>
+      <span class="small">朝</span><span class ="big"><%= record.excretionasa.name%></span><br>
+      <span class="small">昼</span><span class ="big"><%= record.excretionhiru.name%></span><br>
+      <span class="small">夕</span><span class ="big"><%= record.excretionyuu.name%></span><br>
       </td>
 			<td>
-      朝|<%= record.vitalasa%><br>
-      昼|<%= record.vitalhiru%><br>
-      夕|<%= record.vitalyuu%>
+      <span class="small">朝</span><span class ="big"><%= record.vitalasa%></span><br>
+      <span class="small">昼</span><span class ="big"><%= record.vitalhiru%></span><br>
+      <span class="small">夕</span><span class ="big"><%= record.vitalyuu%></span><br>
       </td>
-			<td class="center"><%=record.bathe.name%>
+			<td class="center"><span class ="big"><%=record.bathe.name%></span>
       </td>
-			<td class="center"><%=record.nightrecord.name%>
+			<td class="center"><span class ="big"><%=record.nightrecord.name%></span>
       </td>
-			<td><%=record.diary%>
+			<td><span class ="big"><%=record.diary%></span>
       </td>
-			<td><%=record.nightdiary%>
+			<td><span class ="big"><%=record.nightdiary%></span>
       </td>
-		</tr><%record.accident%>
+		</tr><span class ="big"><%record.accident%></span>
     <%end%>
 	
