@@ -4,6 +4,8 @@
     <h1 class="maintitle">登録する</h1>
     <%= form_with(model: @record, local: true) do |record| %>
 
+    <%= render 'shared/error_messages', model: record.object %>
+
 
   <div class="inner">
      <h2> お名前：

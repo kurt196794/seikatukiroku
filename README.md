@@ -30,38 +30,40 @@ Things you may want to cover:
 # users テーブル
 | Column                | Type   | Options                       |
 | --------              | ------ | ----------------------------  |
-| nickname              | string | null: false                   |
+| name                  | string | null: false                   |
 | email                 | string | null: false, unique:true      | 
+| ppassword   | string  | string | null: false                   |
 | encrypted_ppassword   | string | null: false                   |
-| ppassword             | string | null: false                   |
 
 # Association
-- has_many  :kirokus
-- has_many  :okuri
+- has_many  :records
 
-# kiroku テーブル
+# records テーブル
 | Column            | Type       | Options                         |
 | ----------------  | ------     | ------------------------------- |
-| hydration         | string     | null: false                     |
-| Meal              | string     | null: false                     |
-| excretion         | string     | null: false                     |
-| bathe             | string     | null: false                     |
-| vital             | string     | null: false                     |
-| Nightdiary        | string     | null: false                     |
-| diary             | string     | null: false                     |
-| accident          | string     | null: false                     |
+| user              | references | null: false, foreign_key: true  |
+| name              | string     | null: false                     |
+| room              | string     | null: false                     |
+| mealasa_id        | integer    |                                 |
+| mealhiru_id       | integer    |                                 |
+| mealyuu_id        | integer    |                                 |
+| hydrationasa      | string     |                                 |
+| hydrationhiru     | string     |                                 |
+| hydrationyuu      | string     |                                 |
+| excretionasa_id   | integer    |                                 |
+| excretionhiru_id  | integer    |                                 |
+| excretionyuu_id   | integer    |                                 |
+| bathe_id          | integer    |                                 |
+| vitalasa_id       | integer    |                                 |
+| vitalhiru_id      | integer    |                                 |
+| vitalyuu_id       | integer    |                                 |
+| diary             | string     |                                 |
+| nightdiary        | string     |                                 |
+| accident          | string     |                                 |
+| message           | string     |                                 |
 
 
 # Association
 - belongs_to :user
-- has_many   :okuris
 
-# okuri テーブル
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| mousiokuri       | string     | null: false                    |
-
-# Association
-- belongs_to :user
-- has_many   :kirokus
 >>>>>>> Stashed changes
