@@ -6,6 +6,14 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
+
+    context '新規登録できるとき' do
+      it '正常であれば登録可能'do
+      expect(@user).to be_valid
+      end
+    end
+
+  context '新規登録できないとき' do
     it 'ニックネームが必須であること' do
       @user.name = ''
       @user.valid?
@@ -64,6 +72,7 @@ RSpec.describe User, type: :model do
      @user.email = 'aa'
      @user.valid?
      expect(@user.errors.full_messages).to include("Email is invalid")
+    end
    end
   end
 end
