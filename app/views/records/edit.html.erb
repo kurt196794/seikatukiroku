@@ -115,6 +115,7 @@
 
       <%= record.submit "送信する" %>
       <%= link_to '戻る', root_path%>
+      <p> <%= link_to '退所済みの場合はこちらを押してください', record_path(@record), method: :delete %></p>
 
     <% end %>
   </div>
