@@ -1,5 +1,10 @@
 <%#= render partial: 'kaitekikun'%>
-  <%= current_user.name %>申し送り一覧
+<%= render partial: 'records/kaitekikun'%>
+<div class="okuri">申し送り一覧</div>
+
+
+  <%# <%= current_user.nameさん  %>
+  
   <% @records.each do |record| %>
   <table>
 	  <tbody>

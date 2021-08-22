@@ -11,8 +11,9 @@
 こんにちは 
  <% if user_signed_in? %>
       <%= link_to current_user.name, class: "user-nickname"  %>
-  さん。
-    <%= link_to "申し送りを確認しましょう", "/users/#{current_user.id}" %>
+  さん<br>
+
+    <%= link_to "申し送り一覧", "/users/#{current_user.id}" %>
   <div class="touroku">
     <%= link_to '入居者登録', new_record_path, class: "index_mousiokuri" %>
   </div>
