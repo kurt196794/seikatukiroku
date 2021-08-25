@@ -3,7 +3,7 @@
  <h1 class="maintitle">申し送り一覧</h1>
 
 
-  <%# <%= current_user.nameさん  %>
+
 
  <div class="inner">
     <% @records.each do |record| %>
@@ -11,7 +11,7 @@
 	    <tbody>
 	    	<tr>
 
-      <p><%=record.name%>さん・・・<%= record.message%></p>
+      <p class="okuriname"><%=record.name%>様・・・<%= record.message%></p>
      </tr>
     <tr>
     </tr>
@@ -19,5 +19,5 @@
    <% end %>
 
 
-   <%= link_to '戻る', root_path%>
+   <%= link_to 'TOPページへ戻る', root_path%>
  </div>
